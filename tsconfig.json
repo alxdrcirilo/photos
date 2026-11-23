@@ -1,0 +1,11 @@
+{
+	"extends": "$app/tsconfig",
+	"compilerOptions": {
+		"strict": true,
+		"types": ["$app/types", "node"],
+		// Kit 3's $app/tsconfig ships `paths: {}`, and TypeScript does no extension
+		// substitution on package.json `imports` targets, so `#lib/photos` needs this
+		"paths": { "#lib/*": ["./src/lib/*"] }
+	},
+	"include": ["src", "vite.config.ts"]
+}
